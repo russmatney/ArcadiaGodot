@@ -93,7 +93,7 @@
 (defn destroy-immediate [^Node node]
   (.Free node))
 
-(defn is-qeued-for-deletion? [^Node node]
+(defn is-queued-for-deletion? [^Node node]
   (.IsQueuedForDeletion node))
 
 
