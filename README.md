@@ -79,14 +79,24 @@ After building your project you'll need to manually compile your clojure namespa
 
 The entire dependency tree for the given namespaces will be compiled as well.
 
-Note: the path must allready exist. You can place dlls in the root build directory or a folder named "dlls".
+Note: the path must already exist. You can place dlls in the root build directory or a folder named "dlls".
+
+This could be done by running the game and connecting from a user.clj:
+
+``` clj
+(ns user
+  (:require [arcadia.internal.compiler :as compiler]))
+
+(comment
+  (compiler/aot "dlls" ['selfsame.core]))
+```
 
 
 ## Differences from Arcadia Unity
 
 Notable Arcadia features missing from ArcadiaGodot:
 
-* package manager 
+* package manager
 * Editor side clojure environment
 * reader literals and object serialization
 
